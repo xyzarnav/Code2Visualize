@@ -14,10 +14,12 @@ export default function Hero() {
 	const cq = useTransform(scrollYProgress, [0, 1], [0, 200]);
 	const mq = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
-	const phares1 = ["Pathway to ", "productivity"];
-	const phares2 = [
-		"Celebrate the joy of accomplishment with an app designed to track your progress, motivate your efforts, and celebrate your successes.",
-	];
+	
+	const phares1 = ["Master DSA", "Through Visualization"];
+
+  const phares2 = [
+    "Watch your code execute step by step, understand algorithms visually, and learn with an AI-powered mentor that helps you think—not just memorize.",
+  ];
 	return (
 		<div
 			ref={container}
@@ -32,7 +34,7 @@ export default function Hero() {
 							initial="initial"
 							whileInView="enter"
 							viewport={{ once: true }}>
-							Version 2.0 is here
+							Version 1.0 is here
 						</motion.button>
 					</div>
 					<div>
@@ -56,7 +58,7 @@ export default function Hero() {
 							viewport={{ once: true }}>
 							<Button
 								className="text-white bg-black py-2 px-4"
-								title="Get for free"
+								title="Lets Start"
 							/>
 							<div className="flex items-center gap-2">
 								<Button

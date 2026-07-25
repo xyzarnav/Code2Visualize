@@ -12,15 +12,16 @@ export default function ProductShowcase() {
 	});
 	const cq = useTransform(scrollYProgress, [0, 1], [0, 200]);
 	const mq = useTransform(scrollYProgress, [0, 1], [0, -200]);
-	const phares1 = ["A more effective way", "to track progress"];
-	const phares2 = [
-		"Celebrate the joy of accomplishment with an app",
-		"designed to track your progress and motivate your",
-		"efforts.",
-	];
-	const phares3 = [
-		"Celebrate the joy of accomplishment with an app designed to track your progress and motivate your efforts.",
-	];
+const phrases1 = ["Understand Code.", "Master Algorithms."];
+
+const phrases2 = [
+  "Visualize your code execution step by step,",
+  "learn data structures interactively, and improve",
+  "with an AI-powered DSA coach.",
+];
+	const phrases3 = [
+    "Visualize every line of code, understand every algorithm, and build problem-solving skills with an AI-powered DSA coach.",
+  ];
 	return (
 		<div className="w-full padding-x py-10 bg-gradient-to-b from-white to-[#d2dcff]">
 			<div className="w-full flex flex-col gap-10">
@@ -39,15 +40,15 @@ export default function ProductShowcase() {
 					</motion.div>
 					<div>
 						<h1 className="heading text-center font-bold leading-tight tracking-[-2.7px] bg-gradient-to-b from-black to-[#001E7F] bg-clip-text">
-							<TextMask>{phares1}</TextMask>
+							<TextMask>{phrases1}</TextMask>
 						</h1>
 					</div>
 					<div>
 						<h1 className="text-[#010D3E] font-dmSans paragraph font-normal leading-tight text-center block xm:hidden sm:hidden">
-							<TextMask>{phares2}</TextMask>
+							<TextMask>{phrases2}</TextMask>
 						</h1>
 						<h1 className="text-[#010D3E] font-dmSans paragraph font-normal leading-tight text-center hidden xm:block sm:block">
-							<TextMask>{phares3}</TextMask>
+							<TextMask>{phrases3}</TextMask>
 						</h1>
 					</div>
 				</div>

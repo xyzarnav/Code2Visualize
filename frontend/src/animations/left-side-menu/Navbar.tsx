@@ -27,7 +27,7 @@ export default function Navbar() {
 					{navigationItems.map((data, index) => {
 						return (
 							<Links
-								className="text-white"
+								className="text-black"
 								key={index}
 								data={{ ...data, index }}
 								isActive={selectedIndicator == data.href}
