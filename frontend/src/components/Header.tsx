@@ -1,22 +1,11 @@
-import { useState } from "react";
 import { Button } from "@/components";
 import { navVariants } from "@/motion";
 import { MobileMenu } from "@/animations";
 import { navigationItems } from "@/constants";
 import { arrowRightWhite, logo } from "@/assets/images";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
-	const { scrollY } = useScroll();
-	const [hidden, setHidden] = useState(false);
-
-	useMotionValueEvent(scrollY, "change", (latest) => {
-		if (latest > 0) {
-			setHidden(true);
-		} else {
-			setHidden(false);
-		}
-	});
 	return (
     <>
       <motion.div
@@ -25,7 +14,7 @@ export default function Navbar() {
         variants={navVariants}
         className="fixed w-full top-0 z-50 xm:hidden sm:hidden"
       >
-        <motion.div
+        {/* <motion.div
           className="w-full flex items-center justify-center gap-3 py-3 bg-black"
           variants={navVariants}
           animate={hidden ? "hidden" : "vissible"}
@@ -48,11 +37,9 @@ export default function Navbar() {
               className="text-white"
             />
           </div>
-        </motion.div>
+        </motion.div> */}
         <motion.div
           className="w-full flex items-center justify-between gap-2 padding-x py-3 backdrop-blur-sm"
-          animate={hidden ? { y: -48 } : { y: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
         >
           <div>
             <img src={logo} alt="logo" width={40} height={40} />

@@ -3,6 +3,7 @@ import Lenis from "@studio-freight/lenis";
 import {
 	CTA,
 	Footer,
+	Header,
 	Hero,
 	LogoTicker,
 	Pricing,
@@ -24,6 +25,7 @@ export default function App() {
 
 	return (
 		<>
+			<Header />
 			<Hero />
 			<LogoTicker />
 			<ProductShowcase />

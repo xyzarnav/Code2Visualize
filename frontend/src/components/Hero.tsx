@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Button, Heading, Navbar } from "@/components";
+import { Button, Heading } from "@/components";
 import { imageAnimation, textAnimation } from "@/motion";
 import { ArrowRight, cog, cylinder, noodle } from "@/assets/images";
 import { useRef } from "react";
@@ -24,7 +24,6 @@ export default function Hero() {
 		<div
 			ref={container}
 			className="w-full h-screen xm:min-h-screen sm:min-h-screen bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_80%)]">
-			<Navbar />
 			<div className="w-full padding-x h-full items-center flex gap-4 justify-between overflow-hidden xm:flex-col sm:flex-col xm:pt-20 sm:pt-20">
 				<div className="w-1/2 xm:w-full sm:w-full flex flex-col gap-6 xm:gap-4 sm:gap-4 relative xm:flex-col sm:flex-col">
 					<div className="overflow-hidden">
