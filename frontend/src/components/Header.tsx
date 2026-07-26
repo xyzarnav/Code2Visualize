@@ -1,11 +1,24 @@
+import { useState } from "react";
 import { Button } from "@/components";
 import { navVariants } from "@/motion";
 import { MobileMenu } from "@/animations";
 import { navigationItems } from "@/constants";
 import { arrowRightWhite, logo } from "@/assets/images";
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 export default function Navbar() {
+	const { scrollY } = useScroll();
+	const [hidden, setHidden] = useState(false);
+	const [lastScrollY, setLastScrollY] = useState(0);
+
+	useMotionValueEvent(scrollY, "change", (latest) => {
+		if (latest > lastScrollY && latest > 100) {
+			setHidden(true);
+		} else {
+			setHidden(false);
+		}
+		setLastScrollY(latest);
+	});
 	return (
     <>
       <motion.div
@@ -39,23 +52,25 @@ export default function Navbar() {
           </div>
         </motion.div> */}
         <motion.div
-          className="w-full flex items-center justify-between gap-2 padding-x py-3 backdrop-blur-sm"
+          className="w-full flex items-center justify-between gap-8 px-6 py-4 bg-white/80 backdrop-blur-md border-b border-gray-200"
+          animate={hidden ? { y: -100 } : { y: 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <div>
+          <div className="flex items-center">
             <img src={logo} alt="logo" width={40} height={40} />
           </div>
-          <div className="flex items-center gap-4 xm:hidden sm:hidden">
+          <div className="flex items-center gap-8 xm:hidden sm:hidden">
             {navigationItems.map((item) => (
               <a
                 href={item.href}
                 key={item.id}
-                className="text-[18px] font-normal leading-tight text-[#000000cb]"
+                className="text-[15px] font-medium leading-tight text-gray-700 hover:text-[#183EC2] transition-colors"
               >
                 {item.title}
               </a>
             ))}
             <Button
-              className="text-white bg-black px-4 py-2"
+              className="text-white bg-[#183EC2] px-6 py-2.5 rounded-lg font-medium hover:bg-[#010D3E] transition-colors"
               title="Get for free"
             />
           </div>
